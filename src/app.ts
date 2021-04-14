@@ -2,10 +2,17 @@ import express, {Application} from 'express';
 
 export class App{
     app:Application;
-    constructor(){
+
+    constructor(private port?: number | string){
         this.app= express();
     }
 
+    settings(){
+        this.app.set('port', this.port || process.env.PORT || 3001)
+    }
+
     async listen(){
-        await this.app.listen(3001);
-        console.log('Servidor en puerto 30
+        await this.app.listen();
+        console.log('Servidor en puerto 3001')
+    }
+}
