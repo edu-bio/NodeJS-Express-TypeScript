@@ -1,10 +1,10 @@
 import { Router } from 'express'
 const router = Router();
 
-import {createLibro, getLibro, getPosts, borrarLibro, actualizaLibro} from '../controladores/post.controlador'
+import {createLibro, getLibro, getLibros, borrarLibro, actualizaLibro} from '../controladores/post.controlador'
 
 router.route('/')
-.get(getPosts)
+.get(getLibros)
 .post(createLibro);
 
 router.route('/:postId')
