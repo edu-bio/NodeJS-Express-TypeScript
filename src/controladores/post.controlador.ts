@@ -33,3 +33,12 @@ export async function borrarLibro(req:Request, res: Response){
 
     return res.json({message:'Libro eliminado'});
 }
+
+export async function actualizaLibro(req: Request, res: Response){
+    const id = req.params.postId;
+    const updateLibro: Libro = req.body;
+    const conn = await conectar();
+    const posts = await conn.query('UPDATE Libro set ? WHERE id = ?', [updateLibro, id]);
+
+    return res.json({message:'Libro actualizado'});
+}

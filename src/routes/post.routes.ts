@@ -1,7 +1,7 @@
 import { Router } from 'express'
 const router = Router();
 
-import {createLibro, getLibro, getPosts, borrarLibro} from '../controladores/post.controlador'
+import {createLibro, getLibro, getPosts, borrarLibro, actualizaLibro} from '../controladores/post.controlador'
 
 router.route('/')
 .get(getPosts)
@@ -9,6 +9,7 @@ router.route('/')
 
 router.route('/:postId')
 .get(getLibro)
-.delete(borrarLibro);
+.delete(borrarLibro)
+.put(actualizaLibro);
 
 export default router;
