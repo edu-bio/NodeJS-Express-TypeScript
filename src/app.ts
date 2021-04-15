@@ -25,7 +25,7 @@ export class App{
  
     routes(){
         this.app.use(IndexRoutes);
-        this.app.use('/posts',PostRoutes);
+        this.app.use('/libros',PostRoutes);
     }
     async listen(){
         await this.app.listen(this.app.get('port'));
