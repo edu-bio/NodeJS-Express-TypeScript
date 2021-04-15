@@ -12,7 +12,7 @@ export async function getLibros(req: Request, res: Response): Promise<Response>{
 export async function createLibro(req:Request, res: Response){
     const newLibro: Libro = req.body;
     const conn = await conectar();
-    await conn.query('INSERT INTO Libro SET?', [newLibro]);
+    await conn.query('INSERT INTO Libro SET ?', [newLibro]);
     return res.json({
         message: 'Libro creado con éxito'
     })
@@ -27,7 +27,7 @@ export async function getLibro(req: Request, res:Response): Promise<Response>{
 }
 
 export async function borrarLibro(req:Request, res: Response){
-    const id = req.params.postId;
+    const id = req.params.libroId;
     const conn = await conectar();
     const libros = await conn.query('DELETE FROM Libro WHERE id = ?', [id]);
 
@@ -35,10 +35,10 @@ export async function borrarLibro(req:Request, res: Response){
 }
 
 export async function actualizaLibro(req: Request, res: Response){
-    const id = req.params.postId;
+    const id = req.params.libroId;
     const updateLibro: Libro = req.body;
     const conn = await conectar();
-    const libros = await conn.query('UPDATE Libro set ? WHERE id = ?', [updateLibro, id]);
+    const libros = await conn.query('UPDATE Libro SET ? WHERE id = ?', [updateLibro, id]);
 
     return res.json({message:'Libro actualizado'});
 }

@@ -7,7 +7,7 @@ router.route('/')
 .get(getLibros)
 .post(createLibro);
 
-router.route('/:postId')
+router.route('/:libroId')
 .get(getLibro)
 .delete(borrarLibro)
 .put(actualizaLibro);
