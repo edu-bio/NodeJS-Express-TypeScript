@@ -14,7 +14,7 @@ export async function createLibro(req:Request, res: Response){
     const conn = await conectar();
     await conn.query('INSERT INTO Libro SET ?', [newLibro]);
     return res.json({
-        message: 'Libro creado con éxito'
+        message: 'Libro creado con éxito.'
     })
 }
 
@@ -40,5 +40,5 @@ export async function actualizaLibro(req: Request, res: Response){
     const conn = await conectar();
     const libros = await conn.query('UPDATE Libro SET ? WHERE id = ?', [updateLibro, id]);
 
-    return res.json({message:'Libro actualizado con éxito'});
+    return res.json({message:'Libro actualizado con éxito.'});
 }
