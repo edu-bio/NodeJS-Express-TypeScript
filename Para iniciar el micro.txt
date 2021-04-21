@@ -1,0 +1,2 @@
+En la consola poner: (dentro del directorio del proyecto)
+npm run dev
