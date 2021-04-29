@@ -1,2 +1,4 @@
 .autogit
 node_modules
+src/suma.ts
+.gitignore
