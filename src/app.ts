@@ -12,6 +12,7 @@ export class App{
         this.settings();
         this.middlewares();
         this.routes();
+        this.app.disable('etag');
     }
 
     settings(){

@@ -23,7 +23,7 @@ export async function getLibro(req: Request, res:Response): Promise<Response>{
     const conn = await conectar();
     const libros = await conn.query('SELECT * FROM Libro WHERE id = ?', [id]);
 
-    return res.json(libros[0]);
+    return res.send(libros[0]);
 }
 
 export async function borrarLibro(req:Request, res: Response){
